@@ -1,2 +1,3 @@
-# dlmi_harika
-dlmi_course_mini_project
+Brain MRI Tumor Segmentation(Global Otsu vs Sauvola Adaptive Thresholding)
+
+Project Overview

@@ -57,3 +57,48 @@ Adaptive thresholding improves local sensitivity but still fails in subtle tumor
 **Conclusion:**
 
 Global and adaptive thresholding methods were evaluated on 4237 MRI images. Both approaches achieved low Dice scores, indicating that classical intensity-based segmentation techniques are insufficient for accurate tumor delineation in complex brain MRI datasets.
+
+**3.Retinal Vessel Extraction (Niblack vs Sauvola)**
+
+**Objective:**
+Extract thin blood vessels from retinal fundus images.
+
+**Methods:**
+
+Niblack Thresholding
+
+Sauvola Thresholding
+
+**Dataset:**
+Kaggle — DRIVE Dataset
+
+**Comparison:**
+Sensitivity for thin vessel detection
+
+**Key Findings:**
+Adaptive thresholding performs better than global methods.
+Sauvola is more stable than Niblack in low-contrast regions, but thin vessel detection remains challenging.
+
+**Learning:**
+Understanding local threshold behavior on thin structures.
+
+**4.Cell Nuclei Separation (Watershed)**
+
+**Objective:**
+Separate touching or overlapping cell nuclei.
+
+**Method:**
+Marker-controlled Watershed Segmentation
+
+**Dataset:**
+Kaggle — Data Science Bowl 2018
+
+**Comparison:**
+Watershed with markers vs without markers
+
+**Key Findings:**
+Standard watershed causes over-segmentation.
+Marker-controlled watershed significantly improves nucleus separation.
+
+**Learning:**
+Over-segmentation control and importance of marker selection.

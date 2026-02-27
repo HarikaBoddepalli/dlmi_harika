@@ -181,29 +181,54 @@ Soft clustering provides better boundary accuracy due to its ability to model pi
 
 
 
-**3.Retinal Vessel Extraction (Niblack vs Sauvola)**
-
+**3. Retinal Vessel Extraction (Niblack vs Sauvola)**
 **Objective:**
-Extract thin blood vessels from retinal fundus images.
+
+The goal of this assignment is to extract thin blood vessels from retinal fundus images using adaptive thresholding techniques. Accurate vessel extraction is important for diagnosing eye diseases such as diabetic retinopathy and glaucoma.
+
+**Dataset:**
+
+Dataset: DRIVE Dataset (from Kaggle)
+The dataset contains retinal fundus images along with manually annotated vessel masks used as ground truth for evaluation.
 
 **Methods:**
 
-Niblack Thresholding
+Two local adaptive thresholding techniques were implemented and compared:
 
-Sauvola Thresholding
+**1. Niblack Thresholding**
 
-**Dataset:**
-Kaggle — DRIVE Dataset
+Niblack computes a threshold for each pixel based on the local mean and standard deviation within a small neighborhood.
+It can detect thin vessels but is sensitive to noise, especially in low-contrast regions.
 
-**Comparison:**
-Sensitivity for thin vessel detection
+**2. Sauvola Thresholding**
+
+Sauvola is an improved version of Niblack. It adapts better to variations in illumination and contrast across the image.
+It produces more stable results and reduces noise compared to Niblack.
+
+**Evaluation:**
+
+The methods were compared using Sensitivity, which measures how well thin blood vessels are detected.
+
+Special attention was given to:
+
+Detection of very thin vessels
+
+Performance in low-contrast areas
+
+Noise levels in the segmented output
 
 **Key Findings:**
-Adaptive thresholding performs better than global methods.
-Sauvola is more stable than Niblack in low-contrast regions, but thin vessel detection remains challenging.
 
-**Learning:**
-Understanding local threshold behavior on thin structures.
+Adaptive thresholding performs better than global thresholding for retinal vessel extraction.
+
+Sauvola is more stable than Niblack in low-contrast and uneven illumination regions.
+
+Niblack tends to generate more false positives.
+
+Detection of extremely thin vessels remains challenging for both methods.
+
+
+
 
 **4.Cell Nuclei Separation (Watershed)**
 

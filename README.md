@@ -234,23 +234,53 @@ Detection of extremely thin vessels remains challenging for both methods.
 
 
 
-**4.Cell Nuclei Separation (Watershed)**
+**4. Cell Nuclei Separation (Watershed Segmentation):**
 
 **Objective:**
-Separate touching or overlapping cell nuclei.
 
-**Method:**
-Marker-controlled Watershed Segmentation
+The objective of this assignment is to separate touching or overlapping cell nuclei in microscopic images. Accurate separation of individual nuclei is essential for quantitative cell analysis in biomedical research.
 
 **Dataset:**
-Kaggle — Data Science Bowl 2018
+
+Dataset: Data Science Bowl 2018 (Kaggle)
+The dataset contains microscopic cell images along with annotated nucleus masks used for evaluation.
+
+**Method:**
+
+Watershed Segmentation
+
+Watershed segmentation treats the image as a topographic surface and separates connected objects based on intensity gradients.
+
+Two approaches were implemented:
+
+Standard Watershed (Without Markers)
+
+Marker-Controlled Watershed
 
 **Comparison:**
-Watershed with markers vs without markers
+
+**1️.Standard Watershed (Without Markers):**
+
+Directly applied on the gradient image.
+
+Highly sensitive to noise.
+
+Causes significant over-segmentation, splitting single nuclei into multiple regions.
+
+**2️.Marker-Controlled Watershed:**
+
+Uses predefined foreground and background markers.
+
+Controls region growth.
+
+Produces more accurate separation of touching nuclei.
+
+Reduces over-segmentation.
 
 **Key Findings:**
-Standard watershed causes over-segmentation.
-Marker-controlled watershed significantly improves nucleus separation.
 
-**Learning:**
-Over-segmentation control and importance of marker selection.
+Standard watershed often leads to excessive segmentation due to noise and small intensity variations.
+
+Marker-controlled watershed significantly improves separation accuracy.
+
+Proper marker selection plays a crucial role in achieving reliable nucleus segmentation.

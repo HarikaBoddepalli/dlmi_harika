@@ -58,6 +58,129 @@ Adaptive thresholding improves local sensitivity but still fails in subtle tumor
 
 Global and adaptive thresholding methods were evaluated on 4237 MRI images. Both approaches achieved low Dice scores, indicating that classical intensity-based segmentation techniques are insufficient for accurate tumor delineation in complex brain MRI datasets.
 
+
+
+**2.White Blood Cell Segmentation — K-Means vs Fuzzy C-Means**
+**Project Overview:**
+
+This project implements and compares Hard Clustering (K-Means) and Soft Clustering (Fuzzy C-Means) for the task of White Blood Cell (WBC) nucleus segmentation.
+
+The objective is to analyze how hard and soft clustering techniques perform in medical image segmentation and evaluate their boundary accuracy using quantitative metrics.
+
+**Assignment Objectives:**
+
+Segment WBC nucleus and cytoplasm from microscopic images.
+
+**Implement:**
+
+K-Means Clustering (Hard Clustering)
+
+Fuzzy C-Means Clustering (Soft Clustering)
+
+**Compare segmentation performance using:**
+
+Dice Coefficient
+
+**Understand differences between:**
+
+Hard vs Soft clustering
+
+Crisp vs probabilistic pixel assignment
+
+**Dataset**
+
+Dataset Name: KRD WBC Dataset
+Source: Kaggle
+Images: Microscopic blood smear images
+Annotations: Binary ground truth masks for nucleus segmentation
+
+**Dataset contains:**
+
+train/images
+
+train/mask
+
+val/images
+
+val/mask
+
+**Methodology:**
+**1️.Preprocessing**
+
+Images converted from RGB to LAB color space
+
+For FCM:
+
+Gaussian smoothing applied
+
+Only A and B channels used (better stain separation)
+
+**2️.K-Means (Hard Clustering)**
+
+Number of clusters: 3
+
+Background
+
+Cytoplasm
+
+Nucleus
+
+Each pixel assigned strictly to one cluster.
+
+Best cluster selected based on highest Dice score with ground truth.
+
+**3️.Fuzzy C-Means (Soft Clustering)**
+
+Number of clusters: 3
+
+Fuzziness parameter: m = 1.5
+
+Each pixel assigned membership values across clusters.
+
+Final segmentation obtained using maximum membership.
+
+Best cluster selected using Dice comparison.
+
+**Results (20 Images Evaluation):**
+Method	Average Dice Score
+K-Means (Hard Clustering)	0.758
+Fuzzy C-Means (Soft Clustering)	0.790
+
+**Analysis:**
+
+Fuzzy C-Means achieved higher Dice score.
+
+Soft clustering better handles ambiguous boundary pixels.
+
+Hard clustering performs well but struggles in uncertain regions.
+
+LAB color space improves segmentation quality significantly.
+
+**Key Learning Outcomes:**
+**Hard Clustering (K-Means):**
+
+Fast and simple
+
+Crisp boundaries
+
+Sensitive to overlapping intensities
+
+**Soft Clustering (FCM):**
+
+Probabilistic membership
+
+Better boundary handling
+
+More suitable for medical imaging
+
+**Conclusion:**
+
+The experimental results demonstrate that Fuzzy C-Means outperforms K-Means in WBC nucleus segmentation.
+
+Soft clustering provides better boundary accuracy due to its ability to model pixel-level uncertainty, making it more suitable for medical image segmentation tasks.
+
+
+
 **3.Retinal Vessel Extraction (Niblack vs Sauvola)**
 
 **Objective:**

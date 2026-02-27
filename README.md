@@ -181,7 +181,8 @@ Soft clustering provides better boundary accuracy due to its ability to model pi
 
 
 
-**3. Retinal Vessel Extraction (Niblack vs Sauvola)**
+**3. Retinal Vessel Extraction (Niblack vs Sauvola):**
+
 **Objective:**
 
 The goal of this assignment is to extract thin blood vessels from retinal fundus images using adaptive thresholding techniques. Accurate vessel extraction is important for diagnosing eye diseases such as diabetic retinopathy and glaucoma.

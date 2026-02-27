@@ -60,7 +60,9 @@ Global and adaptive thresholding methods were evaluated on 4237 MRI images. Both
 
 
 
-**2.White Blood Cell Segmentation — K-Means vs Fuzzy C-Means**
+**2.White Blood Cell Segmentation — K-Means vs Fuzzy C-Means:**
+
+
 **Project Overview:**
 
 This project implements and compares Hard Clustering (K-Means) and Soft Clustering (Fuzzy C-Means) for the task of White Blood Cell (WBC) nucleus segmentation.
@@ -105,6 +107,7 @@ val/images
 val/mask
 
 **Methodology:**
+
 **1️.Preprocessing**
 
 Images converted from RGB to LAB color space
@@ -157,6 +160,7 @@ Hard clustering performs well but struggles in uncertain regions.
 LAB color space improves segmentation quality significantly.
 
 **Key Learning Outcomes:**
+
 **Hard Clustering (K-Means):**
 
 Fast and simple
@@ -227,7 +231,6 @@ Sauvola is more stable than Niblack in low-contrast and uneven illumination regi
 Niblack tends to generate more false positives.
 
 Detection of extremely thin vessels remains challenging for both methods.
-
 
 
 
